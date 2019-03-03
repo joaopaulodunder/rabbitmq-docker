@@ -1,0 +1,14 @@
+version: '3'
+ 
+services:
+ 
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    hostname: "rabbit"
+    labels:
+      name: "rabbitmq"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    volumes:
+      - ./conf-rabbit/rabbitmq.conf:/etc/rabbitmq/rabbitmq.config
